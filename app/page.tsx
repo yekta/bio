@@ -1,4 +1,5 @@
 import ScCard from "@/components/sc-card";
+import ScCards from "@/components/sc-cards";
 import { description, displayName, scLinks } from "@/lib/constants";
 import Image from "next/image";
 
@@ -23,12 +24,8 @@ export default function Home() {
           </div>
           <p className="text-muted-foreground text w-full text-center text-sm">{description}</p>
         </div>
-        {/* Links */}
-        <div className="flex w-full flex-col items-center pt-5">
-          {scLinks.map((data) => (
-            <ScCard data={data} key={data.href} />
-          ))}
-        </div>
+        {/* Cards */}
+        <ScCards className="pt-5" />
       </main>
     </div>
   );

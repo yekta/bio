@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import Providers from "@/components/providers/providers";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sans.variable} ${mono.variable} wrap-break-word antialiased`}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
