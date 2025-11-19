@@ -7,7 +7,7 @@ import XIcon from "@/components/icons/sc/x-icon";
 import { ComponentProps, JSX } from "react";
 
 export const displayName = "yekta";
-export const description = "I design and build digital and physical open-source products.";
+export const description = "I design and build digital & physical open-source products.";
 
 export const scLinks: TSc[] = [
   {
