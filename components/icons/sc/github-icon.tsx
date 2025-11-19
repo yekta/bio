@@ -1,10 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ComponentProps } from "react";
 
-export default function GithubIcon({
-  className,
-  style,
-}: ComponentProps<"svg">) {
+export default function GithubIcon({ className, style }: ComponentProps<"svg">) {
   return (
     <svg
       className={cn("size-5 shrink-0", className)}

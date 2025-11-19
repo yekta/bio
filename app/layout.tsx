@@ -25,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${sans.variable} ${mono.variable} antialiased wrap-break-word`}
-      >
+      <body className={`${sans.variable} ${mono.variable} wrap-break-word antialiased`}>
         {children}
       </body>
     </html>
