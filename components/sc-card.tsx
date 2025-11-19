@@ -15,7 +15,7 @@ export default function ScCard({ data: { label, handle, href, Icon } }: TProps) 
     >
       <div className="group-hover:bg-border group-active:bg-border flex w-full items-center gap-2 overflow-hidden rounded-lg border px-3 py-3">
         <Icon className="size-6" />
-        <p className="w-full overflow-hidden font-bold">
+        <p className="w-full overflow-hidden leading-tight font-bold">
           {label}{" "}
           <span className="text-muted-foreground font-mono text-sm font-semibold">
             <span className="text-muted-more-foreground font-normal">(</span>@{handle}
