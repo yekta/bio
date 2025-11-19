@@ -1,1 +1,1 @@
-This is my person bio website with links to my socials.
+This is my personal bio website with links to my socials.
