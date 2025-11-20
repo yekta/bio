@@ -21,7 +21,7 @@ export default function ScCards({ className }: TProps) {
   });
 
   return (
-    <div className={cn("flex w-full flex-col items-center", className)}>
+    <div className={cn("flex w-md max-w-full flex-col items-center", className)}>
       {orderedScLinks.map((data) => (
         <ScCard
           data={data}

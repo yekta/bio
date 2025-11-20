@@ -12,7 +12,7 @@ export default function ScCard({ data: { label, handle, href, Icon }, isHighligh
     <Link
       href={href}
       target="_blank"
-      className="group flex w-full max-w-lg items-center justify-start rounded-xl p-1"
+      className="group flex w-full items-center justify-start rounded-xl p-1"
       data-highlighted={isHighlighted ? true : undefined}
     >
       <div className="group-hover:bg-border group-active:bg-border relative flex w-full items-center gap-2 overflow-hidden rounded-lg px-3 py-3">

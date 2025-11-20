@@ -9,7 +9,7 @@ type TProps = {
 export default function Providers({ children }: TProps) {
   return (
     <NuqsAdapter>
-      <ScHighlightProvider>{children}</ScHighlightProvider>;
+      <ScHighlightProvider>{children}</ScHighlightProvider>
     </NuqsAdapter>
   );
 }
