@@ -19,7 +19,7 @@ export default function ScCard({ data: { label, handle, href, Icon }, isHighligh
         <div className="group-data-highlighted:from-primary/30 from-border via-border to-border pointer-events-none absolute top-0 left-0 h-full w-full rounded-lg bg-linear-to-r via-20% p-px">
           <div className="group-hover:bg-border group-active:bg-border bg-background h-full w-full rounded-[calc(0.5rem-1px)]" />
         </div>
-        <div className="from-primary/10 via-primary/0 to-primary/0 pointer-events-none absolute top-0 left-0 h-full w-full bg-linear-to-r via-40% opacity-0 group-data-highlighted:opacity-100" />
+        <div className="from-primary/15 via-primary/5 to-primary/5 pointer-events-none absolute top-0 left-0 h-full w-full bg-linear-to-r via-40% opacity-0 group-data-highlighted:opacity-100" />
         <Icon className="relative size-6" />
         <p className="relative w-full overflow-hidden leading-tight font-bold tracking-tight">
           <span className="pr-[0.5ch]">{label}</span>
