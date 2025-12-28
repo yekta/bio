@@ -38,8 +38,8 @@ export default function PlatformPage({ platform }: TProps) {
 
   if (!platformObject) {
     return (
-      <div className="my-auto flex w-full flex-col items-center gap-2 pb-[4vh]">
-        <h1 className="text-muted-foreground w-full text-center text-xl leading-relaxed font-medium">
+      <Wrapper>
+        <h1 className="text-muted-foreground w-full text-center text-lg leading-relaxed font-medium">
           Can't Redirect
           <br />
           <span className="text-foreground text-3xl font-bold">Unknown Platform</span>
@@ -47,12 +47,12 @@ export default function PlatformPage({ platform }: TProps) {
         <Button asChild className="mt-2 font-bold">
           <Link href="/">Go Home</Link>
         </Button>
-      </div>
+      </Wrapper>
     );
   }
 
   return (
-    <div className="my-auto flex w-full flex-col items-center gap-1 pb-[4vh]">
+    <Wrapper>
       {!isRedirected ? (
         <LoaderIcon className="text-muted-foreground size-10 animate-spin" />
       ) : (
@@ -66,6 +66,10 @@ export default function PlatformPage({ platform }: TProps) {
           {platformObject.label}
         </span>
       </h1>
-    </div>
+    </Wrapper>
   );
+}
+
+function Wrapper({ children }: { children: React.ReactNode }) {
+  return <div className="my-auto flex w-full flex-col items-center gap-1 pb-[4vh]">{children}</div>;
 }
