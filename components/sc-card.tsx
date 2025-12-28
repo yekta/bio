@@ -7,10 +7,10 @@ type TProps = {
   isHighlighted: boolean;
 };
 
-export default function ScCard({ data: { label, handle, href, Icon }, isHighlighted }: TProps) {
+export default function ScCard({ data: { label, handle, id, Icon }, isHighlighted }: TProps) {
   return (
     <Link
-      href={href}
+      href={`/${id}`}
       target="_blank"
       className="group flex w-full items-center justify-start rounded-xl p-1"
       data-highlighted={isHighlighted ? true : undefined}

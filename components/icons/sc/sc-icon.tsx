@@ -1,0 +1,23 @@
+import BuyMeACoffeeIcon from "@/components/icons/sc/buymeacoffee-icon";
+import GithubIcon from "@/components/icons/sc/github-icon";
+import KofiIcon from "@/components/icons/sc/kofi-icon";
+import MakerWorldIcon from "@/components/icons/sc/makerworld-icon";
+import PatreonIcon from "@/components/icons/sc/patreon-icon";
+import XIcon from "@/components/icons/sc/x-icon";
+import { TScEnum } from "@/lib/constants";
+import { BanIcon } from "lucide-react";
+import { ComponentProps } from "react";
+
+type TProps = {
+  platform: TScEnum;
+} & ComponentProps<"svg">;
+
+export default function ScIcon({ platform, className, style }: TProps) {
+  if (platform === "github") return <GithubIcon className={className} style={style} />;
+  if (platform === "buymeacoffee") return <BuyMeACoffeeIcon className={className} style={style} />;
+  if (platform === "kofi") return <KofiIcon className={className} style={style} />;
+  if (platform === "makerworld") return <MakerWorldIcon className={className} style={style} />;
+  if (platform === "patreon") return <PatreonIcon className={className} style={style} />;
+  if (platform === "x") return <XIcon className={className} style={style} />;
+  return <BanIcon />;
+}

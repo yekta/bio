@@ -1,6 +1,8 @@
-import ScCards from "@/components/sc-cards";
+import ScHighlightProvider from "@/components/providers/sc-highlight-provider";
+import ScCards, { ScCardsSkeleton } from "@/components/sc-cards";
 import { description, displayName } from "@/lib/constants";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -24,7 +26,11 @@ export default function Home() {
             </div>
             <p className="text-muted-foreground text w-full px-0.5 text-sm">{description}</p>
           </div>
-          <ScCards className="relative pt-4" />
+          <Suspense fallback={<ScCardsSkeleton className="relative pt-4" />}>
+            <ScHighlightProvider>
+              <ScCards className="relative pt-4" />
+            </ScHighlightProvider>
+          </Suspense>
         </div>
       </main>
     </div>

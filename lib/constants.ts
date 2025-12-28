@@ -10,14 +10,7 @@ import { z } from "zod";
 export const displayName = "yekta";
 export const description = "I design and build digital & physical open-source products.";
 
-export const ScEnum = z.enum([
-  "github",
-  "makerworld",
-  "twitter",
-  "patreon",
-  "kofi",
-  "buymeacoffee",
-]);
+export const ScEnum = z.enum(["github", "makerworld", "x", "patreon", "kofi", "buymeacoffee"]);
 
 export type TScEnum = z.infer<typeof ScEnum>;
 
@@ -37,7 +30,7 @@ export const scLinks: TSc[] = [
     Icon: MakerWorldIcon,
   },
   {
-    id: "twitter",
+    id: "x",
     label: "X (Twitter)",
     handle: "yektagg",
     href: "https://x.com/yektagg",
@@ -47,7 +40,7 @@ export const scLinks: TSc[] = [
     id: "patreon",
     label: "Patreon",
     handle: "yektagg",
-    href: "https://patreon.com/yektagg",
+    href: "https://patreon.com/cw/yektagg/membership",
     Icon: PatreonIcon,
   },
   {

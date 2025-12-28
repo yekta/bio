@@ -21,14 +21,30 @@ export default function ScCards({ className }: TProps) {
   });
 
   return (
-    <div className={cn("flex w-md max-w-full flex-col items-center", className)}>
+    <Wrapper className={className}>
       {orderedScLinks.map((data) => (
         <ScCard
           data={data}
-          key={data.href}
+          key={data.id}
           isHighlighted={highlightedIds ? highlightedIds.includes(data.id) : false}
         />
       ))}
-    </div>
+    </Wrapper>
+  );
+}
+
+export function ScCardsSkeleton({ className }: TProps) {
+  return (
+    <Wrapper className={className}>
+      {scLinks.map((data) => (
+        <ScCard data={data} key={data.id} isHighlighted={false} />
+      ))}
+    </Wrapper>
+  );
+}
+
+function Wrapper({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={cn("flex w-md max-w-full flex-col items-center", className)}>{children}</div>
   );
 }
