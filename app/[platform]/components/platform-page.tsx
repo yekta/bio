@@ -66,6 +66,11 @@ export default function PlatformPage({ platform }: TProps) {
           {platformObject.label}
         </span>
       </h1>
+      {isRedirected && (
+        <Button asChild className="mt-2 font-bold">
+          <Link href="/">Go Home</Link>
+        </Button>
+      )}
     </Wrapper>
   );
 }
