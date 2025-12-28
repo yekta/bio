@@ -14,6 +14,7 @@ type TProps = {
 export default function PlatformPage({ platform }: TProps) {
   const [isRedirected, setIsRedirected] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutMs = 2000;
   const platformObject = scLinks.find((link) => link.id === platform);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function PlatformPage({ platform }: TProps) {
       }
       timeoutRef.current = setTimeout(() => {
         setIsRedirected(true);
-      }, 2000);
+      }, timeoutMs);
     }
 
     return () => {
