@@ -3,7 +3,7 @@
 import ScIcon from "@/components/icons/sc/sc-icon";
 import { Button } from "@/components/ui/button";
 import { scLinks, TScEnum } from "@/lib/constants";
-import { CheckCircleIcon, LoaderIcon } from "lucide-react";
+import { CheckCircleIcon, HomeIcon, LoaderIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -40,13 +40,14 @@ export default function PlatformPage({ platform }: TProps) {
     return (
       <Wrapper>
         <h1 className="text-muted-foreground w-full text-center text-lg leading-relaxed font-medium">
-          Can't Redirect
+          Can't redirect
           <br />
-          <span className="text-foreground text-3xl font-bold">Unknown Platform</span>
+          <span className="text-foreground text-3xl font-bold">
+            <ScIcon platform={platform} className="mr-[0.25ch] mb-1 inline-block size-10" />
+            Unknown Platform
+          </span>
         </h1>
-        <Button asChild className="mt-2 font-bold">
-          <Link href="/">Go Home</Link>
-        </Button>
+        <HomeButton />
       </Wrapper>
     );
   }
@@ -66,15 +67,22 @@ export default function PlatformPage({ platform }: TProps) {
           {platformObject.label}
         </span>
       </h1>
-      {isRedirected && (
-        <Button asChild className="mt-2 font-bold">
-          <Link href="/">Go Home</Link>
-        </Button>
-      )}
+      {isRedirected && <HomeButton />}
     </Wrapper>
   );
 }
 
 function Wrapper({ children }: { children: React.ReactNode }) {
-  return <div className="my-auto flex w-full flex-col items-center gap-1 pb-[4vh]">{children}</div>;
+  return <div className="my-auto flex w-full flex-col items-center gap-1 pb-[6vh]">{children}</div>;
+}
+
+function HomeButton() {
+  return (
+    <Button asChild className="mt-2 font-bold">
+      <Link href="/">
+        <HomeIcon className="-ml-0.5 size-4 shrink-0" />
+        <span className="min-w-0 shrink">Go Home</span>
+      </Link>
+    </Button>
+  );
 }
