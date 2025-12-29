@@ -8,14 +8,14 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 type TProps = {
-  platform: TScEnum;
+  scId: TScEnum;
 };
 
-export default function PlatformPage({ platform }: TProps) {
+export default function ScPage({ scId }: TProps) {
   const [isRedirected, setIsRedirected] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutMs = 2000;
-  const platformObject = scLinks.find((link) => link.id === platform);
+  const platformObject = scLinks.find((link) => link.id === scId);
 
   useEffect(() => {
     if (platformObject) {
@@ -44,7 +44,7 @@ export default function PlatformPage({ platform }: TProps) {
           Can't redirect
           <br />
           <span className="text-foreground text-3xl font-bold">
-            <ScIcon platform={platform} className="mr-[0.25ch] mb-1 inline-block size-10" />
+            <ScIcon scId={scId} className="mr-[0.25ch] mb-1 inline-block size-10" />
             Unknown Platform
           </span>
         </h1>
@@ -64,7 +64,7 @@ export default function PlatformPage({ platform }: TProps) {
         {!isRedirected ? "Redirecting to" : "Redirected to"}
         <br />
         <span className="text-foreground text-3xl font-bold">
-          <ScIcon platform={platform} className="mr-[0.25ch] mb-1 inline-block size-10" />
+          <ScIcon scId={scId} className="mr-[0.25ch] mb-1 inline-block size-10" />
           {platformObject.label}
         </span>
       </h1>

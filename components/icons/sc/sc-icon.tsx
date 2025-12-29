@@ -10,15 +10,15 @@ import { BanIcon } from "lucide-react";
 import { ComponentProps } from "react";
 
 type TProps = {
-  platform: TScEnum;
+  scId: TScEnum;
 } & ComponentProps<"svg">;
 
-export default function ScIcon({ platform, className, style }: TProps) {
-  if (platform === "github") return <GithubIcon className={className} style={style} />;
-  if (platform === "buymeacoffee") return <BuyMeACoffeeIcon className={className} style={style} />;
-  if (platform === "kofi") return <KofiIcon className={className} style={style} />;
-  if (platform === "makerworld") return <MakerWorldIcon className={className} style={style} />;
-  if (platform === "patreon") return <PatreonIcon className={className} style={style} />;
-  if (platform === "x") return <XIcon className={className} style={style} />;
+export default function ScIcon({ scId, className, style }: TProps) {
+  if (scId === "github") return <GithubIcon className={className} style={style} />;
+  if (scId === "buymeacoffee") return <BuyMeACoffeeIcon className={className} style={style} />;
+  if (scId === "kofi") return <KofiIcon className={className} style={style} />;
+  if (scId === "makerworld") return <MakerWorldIcon className={className} style={style} />;
+  if (scId === "patreon") return <PatreonIcon className={className} style={style} />;
+  if (scId === "x") return <XIcon className={className} style={style} />;
   return <BanIcon className={cn("scale-85", className)} style={style} />;
 }

@@ -1,13 +1,14 @@
-import { TSc } from "@/lib/constants";
+import ScIcon from "@/components/icons/sc/sc-icon";
+import { TScObject } from "@/lib/constants";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 type TProps = {
-  data: TSc;
+  data: TScObject;
   isHighlighted: boolean;
 };
 
-export default function ScCard({ data: { label, handle, id, Icon }, isHighlighted }: TProps) {
+export default function ScCard({ data: { label, handle, id }, isHighlighted }: TProps) {
   return (
     <Link
       href={`/${id}`}
@@ -20,7 +21,7 @@ export default function ScCard({ data: { label, handle, id, Icon }, isHighlighte
           <div className="group-hover:bg-border group-active:bg-border bg-background h-full w-full rounded-[calc(0.5rem-1px)]" />
         </div>
         <div className="from-primary/15 via-primary/5 to-primary/5 pointer-events-none absolute top-0 left-0 h-full w-full bg-linear-to-r via-40% opacity-0 group-data-highlighted:opacity-100" />
-        <Icon className="relative size-6" />
+        <ScIcon scId={id} className="relative size-6" />
         <p className="relative w-full overflow-hidden leading-tight font-bold tracking-tight">
           <span className="pr-[0.5ch]">{label}</span>
           <span className="text-muted-foreground bg-muted-foreground/12 rounded-sm px-1.25 py-0.75 font-mono text-xs font-semibold">
