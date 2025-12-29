@@ -20,5 +20,5 @@ export default function ScIcon({ scId, className, style }: TProps) {
   if (scId === "makerworld") return <MakerWorldIcon className={className} style={style} />;
   if (scId === "patreon") return <PatreonIcon className={className} style={style} />;
   if (scId === "x") return <XIcon className={className} style={style} />;
-  return <BanIcon className={cn("scale-85", className)} style={style} />;
+  return <BanIcon className={cn("scale-80", className)} style={style} />;
 }
