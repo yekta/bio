@@ -14,7 +14,7 @@ type TProps = {
 export default function ScPage({ scId }: TProps) {
   const [isRedirected, setIsRedirected] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const timeoutMs = 2000;
+  const timeoutMs = 5000;
   const platformObject = scLinks.find((link) => link.id === scId);
 
   useEffect(() => {
