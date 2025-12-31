@@ -12,6 +12,10 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       person_profiles: "always",
       defaults: "2025-11-30",
     });
+    const posthogId = posthog.get_distinct_id();
+    if (posthogId) {
+      posthog.identify(posthogId, { original_posthog_id: posthogId });
+    }
   }, []);
 
   return <PHProvider client={posthog}>{children}</PHProvider>;
